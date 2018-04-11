@@ -1,25 +1,16 @@
 {
-  "name": "e-learning",
+  "name": "data-learn",
   "version": "1.0.0",
-  "description": "e-learning application for jaypee noida",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AshishkrGoyal/e-learning.git"
-  },
-  "author": "@AshishkrGoyal",
+  "author": "@Ashishkr",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AshishkrGoyal/e-learning/issues"
-  },
-  "homepage": "https://github.com/AshishkrGoyal/e-learning#readme",
   "dependencies": {
     "express": "^4.16.3",
-    "nodemon": "^1.17.3",
-    "request": "^2.85.0",
-    "yargs": "^11.0.0"
+    "mongoose": "^2.9.10"
   }
 }

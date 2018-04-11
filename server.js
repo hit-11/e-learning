@@ -1,30 +1,58 @@
 const express = require('express');
-const request = require('request');
-const yargs = require('yargs');
+const mongoose = require('mongoose');
 
-const port = 8888||process.env.port;
-const ip = '172.16.96.246'; 
-const app = express();
-
-app.get('/',function (req, res) {
-    res.send("welcome to the route section for e-learning app of jaypee noida :)");
-});
-
-
-//creating A dynamic route for mentor section
-app.get('/:Mentor',function (req, res) {
-    res.send(req.params.Mentor);
-})
-
-
-
-app.listen(port,ip,function (err) {
+//mongoose.connect('mongodb://root:ashish@ds023644.mlab.com:23644/database-test',function (err) {
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/database-learn',function (err) {
     if(err)
     {
         console.log(err);
     }
     else
     {
-        console.log("app is running on local ip");
+        console.log('database has been connected');
     }
+});
+
+const app = express();
+const UserSchema = new mongoose.Schema(
+    {
+        name : String,
+        age : Number
+    }
+);
+
+
+const User = mongoose.model('User', UserSchema);
+
+
+app.get('/create-user',function (req, res, next) {
+    let user = new User();
+    user.name = "AKG";
+    user.age = 19;
+    user.save(function(err)
+    {
+        if(err)
+        {
+            console.log(err);
+            next(err);
+        }
+        else
+        {
+
+            res.json(user);
+            //next();
+        }
+
+    })
+  //  res.send(user);
+});
+
+app.listen(7896,function (err) {
+    if(err)
+    {
+        console.log(err);
+    }
+    else
+    console.log("app is running at 4040")
 });
