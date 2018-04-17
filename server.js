@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const ejs = require('ejs');
 const engine = require('ejs-mate');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const mongoStore = require('connect-mongo')(session);
 
 
 const port = 8888||process.env.port;
@@ -24,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 
+
 mongoose.connect('mongodb://localhost:27017/e-learning',function (err) {
     if(err)
     {
@@ -37,6 +41,18 @@ mongoose.connect('mongodb://localhost:27017/e-learning',function (err) {
 
 
 
+
+app.use(cookieParser());
+app.use(session({
+  resave: true,
+  secret: "e-learning",
+  //store: session,
+  store: new mongoStore({url: "mongodb://localhost:27017/e-learning"}),
+  uninitialized: true
+}))
+
+
+
 const userSchema = new  mongoose.Schema(
     {
         name: String,
@@ -46,6 +62,9 @@ const userSchema = new  mongoose.Schema(
 
 
 const User  = mongoose.model('User',userSchema);
+
+
+
 
 
 app.get('/create-student',function (req, res, next) {
@@ -64,6 +83,14 @@ app.get('/create-student',function (req, res, next) {
         }
     })
 });
+
+
+//login-route
+
+
+
+
+
 
 
 app.post('/create-mentor',function (req, res, next) {
