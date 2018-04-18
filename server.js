@@ -6,7 +6,8 @@ const ejs = require('ejs');
 const engine = require('ejs-mate');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
+const passport = require('passport');
+const passportFacebook = require('passport-facebook');
 
 
 const secret = require('./config/secret');
@@ -37,8 +38,17 @@ app.set('views',__dirname+'/views')
 //app.use(helmet());
 app.use(morgan('dev'));
 
+
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.use(cookieParser());
 
@@ -57,4 +67,4 @@ app.listen(secret.port,function(err)
     {
         console.log("app is running on port 4040");
     }
-})
+});
