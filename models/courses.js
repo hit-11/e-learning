@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//const Schema = mongoose.Schema;
+
 const CourseSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -25,12 +27,12 @@ const CourseSchema = new mongoose.Schema({
   },
   Teacher: [
     {
-      teacher: {type: Schema.Types.ObjectId, ref: 'user'}
+      teacher: {type: mongoose.Schema.Types.ObjectId, ref: 'user'}
     }
   ],
   Student: [
     {
-      student: {type: Schema.Types.ObjectId, ref: 'user'}
+      student: {type: mongoose.Schema.Types.ObjectId, ref: 'user'}
     }
   ]
 

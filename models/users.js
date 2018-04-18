@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+//const Schema = mongoose.Schema;
+
 const UserSchema = new mongoose.Schema(
   {
     email: {
@@ -18,12 +20,12 @@ const UserSchema = new mongoose.Schema(
     },
     courseTeach: [
       {
-        course: {type: Schema.Types.ObjectId, ref: 'Courses'}
+        course: {type: mongoose.Schema.Types.ObjectId, ref: 'Courses'}
       }
     ],
     courseTaken: [
       {
-        course: {type: Schema.Types.ObjectId, ref: 'Courses'}
+        course: {type: mongoose.Schema.Types.ObjectId, ref: 'Courses'}
       }
     ]
 
