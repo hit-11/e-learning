@@ -8,5 +8,6 @@ module.exports = {
         clientSecret: "bc43b530f9704bea2a17cce7b0d82e98",
         profile: ["emails","displayName"],
         callbackUrl: "http://localhost:4040/auth/facebook/"
-    }
-}
+    },
+    "key" : "jiit-learning"
+};
