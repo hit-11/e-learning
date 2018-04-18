@@ -8,7 +8,7 @@ module.exports = function(app){
 
     app.get('/local',function(req, res, next)
     {
-        res.render('index');
+        res.render('main/home');
     })
 };
 /*const express = require('express');

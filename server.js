@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-const helmet = require('helmet');
+//const helmet = require('helmet');
 const mongoose = require('mongoose');
 const ejs = require('ejs');
 const engine = require('ejs-mate');
@@ -34,7 +34,7 @@ app.engine('ejs',engine);
 
 app.set('views',__dirname+'/views')
 
-app.use(helmet());
+//app.use(helmet());
 app.use(morgan('dev'));
 
 app.use(bodyParser.json());
