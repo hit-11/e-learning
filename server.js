@@ -7,7 +7,9 @@ const engine = require('ejs-mate');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
-const passportFacebook = require('passport-facebook');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+//const passportFacebook = require('passport-facebook');
 
 
 const secret = require('./config/secret');
@@ -24,7 +26,7 @@ mongoose.connect(secret.db,function(err)
     {
         console.log("database has been connected!");
     }
-})
+});
 
 
 const app = express();
@@ -51,11 +53,18 @@ app.use(passport.session());
 
 
 app.use(cookieParser());
-
+app.use(session(
+    {
+        resave: true,
+        saveUnInitialized: true,
+        secret: secret.key,
+        store: new MongoStore({url: secret.db, autoReconnect: true})
+    }
+));
 
 //require('./routes/main')(app);
 require('./routes/main')(app);
-
+require('./routes/users')(app);
 
 app.listen(secret.port,function(err)
 {

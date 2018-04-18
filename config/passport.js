@@ -14,3 +14,42 @@ passport.deserializeUser(function (id, done) {
 
     })
 });
+
+
+passport.use(new FacebookStrategy(
+    {
+        clientID: Secret.facebook.clientID,
+        clientSecret: Secret.facebook.clientSecret,
+        callbackURL: Secret.facebook.callbackURL
+    },
+    function (token, refreshToken, profile, done) {
+        user.findOne({facebook:profile.id}, function (err, user) {
+            if(err)
+            {
+                return done(err);
+            }
+            if(user)
+            {
+                return done(null, user);
+            }
+            else
+            {
+                     const new_user = new user();
+                     new_user.email = profile.email;
+                     new_user.profile.name = profile.displayName;
+                     new_user.facebook = profile.id;
+
+
+                new_user.save(function (err) {
+                    if(err)
+                    {
+                        console.log(err);
+                    }
+                    return done(err, new_user)
+                })
+            }
+
+
+        })
+    }
+));;;;;;;;;;;;;;;;;;;
