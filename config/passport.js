@@ -18,9 +18,9 @@ passport.deserializeUser(function (id, done) {
 
 passport.use(new FacebookStrategy(
     {
-        clientId: Secret.facebook.clientId,
+        clientID: Secret.facebook.clientID,
         clientSecret: Secret.facebook.clientSecret,
-        callbackUrl: Secret.facebook.callbackUrl
+        callbackURL: Secret.facebook.callbackURL
     },
     function (token, refreshToken, profile, done) {
         user.findOne({facebook:profile.id}, function (err, user) {

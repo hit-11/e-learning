@@ -64,7 +64,7 @@ app.use(session(
 
 //require('./routes/main')(app);
 require('./routes/main')(app);
-
+require('./routes/users')(app);
 
 app.listen(secret.port,function(err)
 {
