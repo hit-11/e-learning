@@ -2,7 +2,7 @@ const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 
 const Secret = require('./secret');
-const user = require('../models/users');
+const User = require('../models/users');
 
 passport.serializeUser(function (user, done) {
     done(null, user.id)
@@ -23,7 +23,7 @@ passport.use(new FacebookStrategy(
         callbackURL: Secret.facebook.callbackURL
     },
     function (token, refreshToken, profile, done) {
-        user.findOne({facebook:profile.id}, function (err, user) {
+        User.findOne({facebook:profile.id}, function (err, user) {
             if(err)
             {
                 return done(err);
@@ -34,7 +34,7 @@ passport.use(new FacebookStrategy(
             }
             else
             {
-                     const new_user = new user();
+                     const new_user = new User();
                      new_user.email = profile.email;
                      new_user.profile.name = profile.displayName;
                      new_user.facebook = profile.id;
@@ -52,4 +52,4 @@ passport.use(new FacebookStrategy(
 
         })
     }
-));;;;;;;;;;;;;;;;;;;
+));
