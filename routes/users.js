@@ -6,12 +6,13 @@ module.exports = function (app) {
     res.render('./accounts/login');
   })
 
-  app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
+  app.get('/auth/facebook', passport.authenticate('facebook'));
 
-  app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+  app.get('/auth/facebook/callback', function(req, res, next){
+    passport.authenticate('facebook', {
     successRedirect : '/profile',
     failureRedirect: '/login'
-  }));
+  })});
 
 
   app.get('/logout', function (req, res, next) {
