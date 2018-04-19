@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "lint": "eslint --exe .js"
-
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,7 @@
   },
   "homepage": "https://github.com/AshishkrGoyal/e-learning#readme",
   "dependencies": {
+    "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "connect-mongo": "^2.0.1",
     "cookie-parser": "^1.4.3",
