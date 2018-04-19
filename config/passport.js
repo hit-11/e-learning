@@ -9,7 +9,8 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-    user.findOne({username:username}, function (err, user) {
+   // user.findOne({username:username}, function (err, user) {
+  User.findOne(id, function (err, user) {
         done(err, user)
 
     })
