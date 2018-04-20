@@ -21,7 +21,9 @@ passport.use(new FacebookStrategy(
     {
         clientID: Secret.facebook.clientID,
         clientSecret: Secret.facebook.clientSecret,
-        callbackURL: Secret.facebook.callbackURL
+        callbackURL: Secret.facebook.callbackURL,
+        profileFields: ["emails"]
+        //"enable":true
     },
     function (token, refreshToken, profile, done) {
         User.findOne({facebook:profile.id}, function (err, user) {
@@ -36,7 +38,7 @@ passport.use(new FacebookStrategy(
             else
             {
                      const new_user = new User();
-                     new_user.email = profile.email;
+                     new_user.email = profile.emails[0].value;
                      new_user.profile.name = profile.displayName;
                      new_user.facebook = profile.id;
 
