@@ -71,3 +71,6 @@ body, html{
     padding-top:1vh;
     background: none ;
 }
+#facebook i{
+    padding-left: 10px;
+}
