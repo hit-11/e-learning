@@ -75,3 +75,6 @@ body, html{
 #facebook i{
     padding-left: 10px;
 }
+.forgot a,a:hover,a:visited{
+    color : blue;
+}
