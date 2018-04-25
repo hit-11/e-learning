@@ -20,7 +20,9 @@ module.exports = function (app) {
     }*/
   ));
 
-
+  app.get('/signup',(req,res,next)=>{
+    res.render('./accounts/signup');
+  });
   app.get('/logout', function (req, res, next) {
     req.logOut();
     res.redirect('/login');
