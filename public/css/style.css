@@ -35,9 +35,10 @@
     text-content: center;
 }
 #container{
-    margin-top: 18vh;
+    margin-top: 10vh;
     margin-left: 10vh;
     margin-right: 10vh;
+    margin-bottom: 15vh;
 }
 body, html{
     padding: 0 !important;
@@ -50,7 +51,7 @@ body, html{
     -webkit-box-shadow: 0px 6px 22px 1px rgba(0,0,0,0.83);
     -moz-box-shadow: 0px 6px 22px 1px rgba(0,0,0,0.83);
     box-shadow: 0px 6px 22px 1px rgba(0,0,0,0.83);
-    margin-bottom: 7vh;
+//margin-bottom: 10vh;
 }
 .form-container h2{
     padding-bottom: 15px;
