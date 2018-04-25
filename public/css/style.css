@@ -1,13 +1,17 @@
 #navigation{
-
-    background-color: black !important;
+    background: #42275a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 0 !important;
     margin : 0 !important;
 }
 .navbar-inverse{
-    background-color: black !important;
+    background: #42275a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 0 !important;
     margin: 0 !important;
+    border :0 !important;
 }
 .navbar-inner a,a:visited{
     color :white !important;;
@@ -35,6 +39,10 @@
     margin-left: 10vh;
     margin-right: 10vh;
 }
+body, html{
+    padding: 0 !important;
+    margin: 0!important;
+}
 
 .form-container{
     padding: 20px 40px 40px 40px;
@@ -48,10 +56,18 @@
     padding-bottom: 15px;
 }
 #footer{
+    background: #42275a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin:0 auto;
-    padding:0;
+    color: orange;
+    height: 5vh;
 
 }
 #footer a{
-    color : black !important;
+    color : white !important;
+}
+#footer p{
+    padding-top:1vh;
+    background: none ;
 }
