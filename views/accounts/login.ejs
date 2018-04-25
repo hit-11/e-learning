@@ -1,1 +1,64 @@
-<a href = '/auth/facebook'>click to login</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://use.fontawesome.com/04d7cf4e5c.js"></script>
+
+</head>
+
+<body>
+
+<%include ../partials/navbar.ejs%>
+
+<div class="container-fluid" id="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <!--<div class="well" id="main-content">-->
+            <form class="form-container">
+                <div class="form-header">
+                    <h2 class="text-center">E-Learning</h2>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control"id="username"placeholder="Username" required/>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Passowrd"/>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-inline">
+                        <input type="checkbox"/>Rememeber Me
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" id="submit" value="Log In" class="btn btn-success btn-block"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" onclick="window.location.href='/auth/facebook'"  class="btn btn-primary btn-block">LogIn via fB"</button>
+                </div>
+                <div class="form-group">
+                    <button type="submit" onclick="window.location.href='/signup'" class="btn btn-info btn-block">Sign Up</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12"></div>
+</div>
+<%include ../partials/javascript.ejs%>
+</body>
+<footer id="footer">
+    <p class="pull-right" id="footer"><a href="#">Back to top</a></p>
+    <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+</html>
+
+
