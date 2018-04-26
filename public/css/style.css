@@ -16,7 +16,10 @@ html,body{
     margin: 0 !important;
     border :0 !important;
 }
-.navbar-inner a,a:visited{
+.menu a{
+    color:white;
+}
+.menu a:visited{
     color :white !important;;
     font-size:15px;
 }
@@ -80,4 +83,8 @@ body, html{
 }
 .forgot a,a:hover,a:visited{
     color : blue;
+}
+.btn-navbar{
+    background-color: orange;
+    margin-top : -1vh;
 }

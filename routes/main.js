@@ -1,4 +1,4 @@
-const express = require('express');
+const  express = require('express');
 const app = express();
 module.exports = function(app){
     app.get('/',function(req, res, next)
@@ -10,6 +10,12 @@ module.exports = function(app){
     {
         res.render('main/home');
     })
+    /*app.get('/about',(req,res,next)=>{
+        res.render('main/about');
+    })
+    app.get('/contact',(req,res,next)=>{
+        res.render('main/contact');
+    })*/
 };
 /*const express = require('express');
 const app = express();
