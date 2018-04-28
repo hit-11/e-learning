@@ -1,5 +1,6 @@
 const passport = require('passport');
 const passportConfig = require('../config/passport');
+const user = require('../models/users');
 module.exports = function (app) {
 
   app.get('/login', function (req, res, next) {
@@ -22,13 +23,16 @@ module.exports = function (app) {
   app.get('/signup',(req,res,next)=>{
     res.render('./accounts/signup');
   });
+
+
   app.get('/logout', function (req, res, next) {
-    req.logOut();
+    req.logout();
     res.redirect('/login');
   })
 
   app.get('/profile', function (req, res, next) {
     res.render('./accounts/profile');
+    //console.log(req.body.email);
 
   })
 }

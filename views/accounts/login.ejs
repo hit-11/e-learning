@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Log In</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <script src="https://use.fontawesome.com/04d7cf4e5c.js"></script>
@@ -16,22 +16,23 @@
 <body>
 
 <%include ../partials/navbar.ejs%>
-<div class="container-fluid" id="container">
+
+<div class="container" id="form-div">
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12"></div>
         <div class="col-md-6 col-sm-6 col-xs-12">
             <!--<div class="well" id="main-content">-->
             <form class="form-container">
                 <div class="form-header">
-                    <h2 class="text-center">Welcome to E-Learning Portal</h2>
+                    <h2 class="text-center">E-Learning Portal</h2>
                 </div>
                 <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control"id="username"placeholder="Username" required/>
+                    <!--<label for="username">Username:</label>-->
+                    <input type="text" class="form-control" id="username" placeholder="Username" required/>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" placeholder="Passowrd"/>
+                    <!--<label for="password">Password:</label>-->
+                    <input type="password" class="form-control" id="password" placeholder="Passoword"/>
                 </div>
                 <div class="form-group">
                     <span>
@@ -45,10 +46,15 @@
                     <input type="submit" id="submit" value="Log In" class="btn btn-success btn-block"/>
                 </div>
                 <div class="form-group">
-                    <button type="submit" id="facebook" onclick="window.location.href='/auth/facebook'"  class="btn btn-primary btn-block">LogIn with Facebook<i class="fa fa-facebook"></i></button>
+                    <button type="submit" id="facebook" onclick="window.location.href='/auth/facebook'"  class="btn btn-primary btn-block">Login with Facebook <i class="fa fa-facebook"></i></button>
                 </div>
+
                 <div class="form-group">
-                    <button type="submit" onclick="window.location.href='/signup'" class="btn btn-info btn-block">Sign Up</button>
+                    <button type="submit" id="github" onclick="window.location.href='/auth/facebook'"  class="btn btn-primary btn-block">Login with Github <i class="fa fa-github"></i></button>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" onclick="window.location.href='/signup'" class="btn btn-primary btn-block">Sign Up</button>
                 </div>
             </form>
 
@@ -58,9 +64,11 @@
 </div>
 <%include ../partials/javascript.ejs%>
 </body>
+
+
 <footer id="footer">
     <p class="pull-right" id="footer"><a href="#">Back to top</a></p>
-    <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p>&copy; 2018 Jaypee, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
 </footer>
 </html>
 
