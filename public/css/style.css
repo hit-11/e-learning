@@ -18,6 +18,9 @@ html,body{
  /*   padding: 0 !important;
     margin : 0 !important;*/
     width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
 }
 
 #navigation .container
@@ -68,6 +71,7 @@ html,body{
     border: 2px solid #cccccc;
 
     box-shadow: 0 0 22px 1px rgba(0,0,0,0.83);
+    margin-top: 10%;
     /*margin-bottom: 10vh;*/
 }
 .form-container h2{
@@ -87,6 +91,7 @@ input{
     color: white;
     padding: 0;
     margin-bottom: 0;
+    bottom: 0;
 }
 #footer a{
     color : white !important;
