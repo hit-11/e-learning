@@ -15,8 +15,8 @@ html,body{
     /*background: #42275a;*/  /* fallback for old browsers */
     /*background: -webkit-linear-gradient(to left, #734b6d, #42275a);  !* Chrome 10-25, Safari 5.1-6 *!
     background: linear-gradient(to left, #734b6d, #42275a); *//* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- /*   padding: 0 !important;
-    margin : 0 !important;*/
+    /*   padding: 0 !important;
+       margin : 0 !important;*/
     width: 100%;
     position: fixed;
     z-index: 9999;
@@ -25,7 +25,7 @@ html,body{
 
 #navigation .container
 {
-   max-width: 100%;
+    max-width: 100%;
     margin: 0;
     padding: 0;
     border-width: 0;
@@ -35,13 +35,16 @@ html,body{
 
 .navbar-inverse{
     background-color: black;
- /*   -webkit-border-radius: 0;!important;
-    -moz-border-radius: 0;!important;*/
+    /*   -webkit-border-radius: 0;!important;
+       -moz-border-radius: 0;!important;*/
     border-radius: 0; !important;
     border-width: 0; !important
 
 }
-.navbar-inner a,a:visited{
+.menu a{
+    color:white;
+}
+.menu a:visited{
     color :white !important;;
     font-size:15px;
 }
@@ -107,6 +110,7 @@ input{
 .forgot a,a:hover,a:visited{
     color : blue;
 }
+
 #facebook
 {
     background-color: #3b5998;
@@ -123,3 +127,46 @@ input{
         border-radius: 0;!important;
     }
 }*/
+header h2{
+    font-weight: bolder;
+    margin-bottom: 4vh;
+    margin-top:2vh;
+    text-transform: uppercase;
+}
+hr{
+    width:75%;
+    background-color:black;
+    margin-bottom:5vh;
+    height:1px;
+}
+.faculty-desc{
+    display: inline;
+}
+.faculty-img{
+    width:150px;
+    height:200px;
+    float:left;
+    margin-bottom:4vh;
+    margin-right:2vh;
+}
+.faculty-name{
+    font-size:20px;
+    font-weight: bolder;
+}
+.faculty-profile{
+    font-size:18px ;
+    font-weight: bold;
+}
+.faculty-email{
+    font-size:14px;
+}
+#cont {
+    overflow:hidden;
+}
+#main a{
+    float:left;
+    font-size: 25px;
+    color : black;
+    margin: 2vh;
+}
+
