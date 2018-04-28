@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/04d7cf4e5c.js"></script>
+
+</head>
+
+<body>
+
+<%include ../partials/navbar.ejs%>
+
+<!--Checking which page to load-->
+<%if(pageno == 0){%>
+<%var start = 0%>
+<%var end = 23;%>
+<%}%>
+
+<%if(pageno == 1){%>
+<%var start = 24;%>
+<%var end = 47;%>
+<%}%>
+
+<%if(pageno ==2 ){%>
+<%var start = 48;%>
+<%var end = 71;%>
+<%}%>
+
+<%if(pageno == 3){%>
+<%var start = 72;%>
+<%var end = 87;%>
+<%}%>
+
+<div class="container" >
+      <header>
+          <h2 class="text-center">Computer Science & IT Deptatment JIIT, Noida</h2>
+      </header>
+    <hr>
+      <div class="row" id="content-1">
+         <% for(var index =start;index<=end ;index++) {%>
+         <div class="col-md-4">
+             <div class="faculty-desc">
+                 <img src="<%=imgsrc[index]%>" alt="photo" class="faculty-img">
+                 <p class="faculty-name"><%=name[index]%></p>
+                 <p class="faculty-profile"><%=profile[index]%></p>
+                 <p class="faculty-email" ><%=email[index]%></p>
+             </div>
+
+         </div>
+         <%}%>
+      </div>
+</div>
+<div id="cont">
+    <div id="main">
+        <a href="/about" >1</a>
+        <a href="/about?page=1">2</a>
+        <a href="/about?page=2">3</a>
+        <a href="/about?page=3">4</a>
+    </div>
+</div>
+
+<%include ../partials/javascript.ejs%>
+
+</body>
+
+<footer id="footer">
+    <p class="pull-right" id="footer"><a href="#">Back to top</a></p>
+    <p>&copy; 2018 Jaypee, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+</html>
+
+
