@@ -139,6 +139,12 @@ hr{
     margin-bottom:5vh;
     height:1px;
 }
+#well{
+    margin-bottom:1vh;
+}
+#well:hover{
+    background-color:#dddddd;
+}
 .faculty-desc{
     display: inline;
 }
@@ -148,8 +154,10 @@ hr{
     float:left;
     margin-bottom:4vh;
     margin-right:2vh;
+    padding-top:2vh;
 }
 .faculty-name{
+    padding-top:2vh;
     font-size:20px;
     font-weight: bolder;
 }
@@ -169,4 +177,5 @@ hr{
     color : black;
     margin: 2vh;
 }
+
 
